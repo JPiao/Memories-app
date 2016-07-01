@@ -49,6 +49,4 @@ class Post: NSObject, NSCoding {
         aCoder.encodeObject(self._postDescrip, forKey: "description")
     }
     
-    
-    
 }

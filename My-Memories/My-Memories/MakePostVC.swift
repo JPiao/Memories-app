@@ -58,5 +58,4 @@ class MakePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
     }
     
-    
 }
