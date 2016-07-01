@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.onPostLoaded(_:)), name: "postLoaded", object: nil)
+        DataService.shared.loadPosts()
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

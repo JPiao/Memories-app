@@ -24,5 +24,6 @@ class PostCell: UITableViewCell {
     func configureCell(post: Post) {
         title.text = post.title
         postDescrip.text = post.postDescrip
+        img.image = DataService.shared.imageForPath(post.imgPath)
     }
 }
