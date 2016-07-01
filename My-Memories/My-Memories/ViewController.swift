@@ -11,21 +11,12 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var posts = [Post]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
-        
-        //sample data to see if the table view works
-        posts.append(Post(img: "", title: "asdfasdfasdfsdf", description: "asdjkdjdjdjd"))
-        posts.append(Post(img: "", title: "asdfasdfasdfsdf", description: "asdjkdjdjdjd"))
-        posts.append(Post(img: "", title: "asdfasdfasdfsdf", description: "asdjkdjdjdjd"))
-        posts.append(Post(img: "", title: "asdfasdfasdfsdf", description: "asdjkdjdjdjd"))
-        
-        tableView.reloadData()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.onPostLoaded(_:)), name: "postLoaded", object: nil)
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -33,12 +24,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return DataService.shared.loadedPosts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let post = posts[indexPath.row]
+        let post = DataService.shared.loadedPosts[indexPath.row]
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
             cell.configureCell(post)
@@ -53,6 +44,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 101.0
+    }
+    
+    func onPostLoaded(notif: AnyObject) {
+        tableView.reloadData()
     }
 }
 
