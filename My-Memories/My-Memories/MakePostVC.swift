@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MakePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MakePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var postImg: UIImageView!
     @IBOutlet weak var postTitle: UITextField!
@@ -24,6 +24,7 @@ class MakePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         imgPicker = UIImagePickerController()
         imgPicker.delegate = self
+        
     }
 
     @IBAction func CancelBtnPress(sender: AnyObject) {
@@ -50,5 +51,12 @@ class MakePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         imgPicker.dismissViewControllerAnimated(true, completion: nil)
         postImg.image = image
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        self.view.endEditing(true)
+        
+    }
+    
     
 }

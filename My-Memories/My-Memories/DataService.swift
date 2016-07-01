@@ -38,7 +38,7 @@ class DataService {
     
     func saveImageAndCreatePath(image: UIImage) -> String {
         let imgData = UIImagePNGRepresentation(image)
-        let imgPath = "image\(NSDate.timeIntervalSinceReferenceDate()).png" //creating unique names
+        let imgPath = "image\(NSDate.timeIntervalSinceReferenceDate()).png"
         let fullPath = documentsPathForFileName(imgPath)
         imgData?.writeToFile(fullPath, atomically: true)
         return imgPath

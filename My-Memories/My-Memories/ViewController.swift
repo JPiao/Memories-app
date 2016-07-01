@@ -14,9 +14,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.onPostLoaded(_:)), name: "postLoaded", object: nil)
+        
         DataService.shared.loadPosts()
     }
 
@@ -35,6 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
             cell.configureCell(post)
             return cell
+            
         } else {
             let cell = PostCell()
             cell.configureCell(post)
@@ -50,5 +54,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func onPostLoaded(notif: AnyObject) {
         tableView.reloadData()
     }
+    
 }
 
