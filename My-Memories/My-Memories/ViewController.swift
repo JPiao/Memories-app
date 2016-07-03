@@ -51,9 +51,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 101.0
     }
     
+
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let title = DataService.shared.loadedPosts[indexPath.row].title
+        let desc = DataService.shared.loadedPosts[indexPath.row].postDescrip
+        let array = [title, desc]
+        performSegueWithIdentifier("ShowDetail", sender: array)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowDetail" {
+            if let svc = segue.destinationViewController as? DetailVC {
+                if let info = sender as? [String] {
+                    svc.titleText = info[0]
+                    svc.descText = info[1]
+                }
+            }
+        }
+    }
+    
     func onPostLoaded(notif: AnyObject) {
         tableView.reloadData()
+
     }
     
 }
-
