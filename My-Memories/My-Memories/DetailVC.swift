@@ -15,16 +15,20 @@ class DetailVC: UIViewController {
     @IBOutlet weak var descripLable: UILabel!
     
     var titleText = ""
-    var image: UIImageView!
+    var image: UIImage!
     var descText = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        img.layer.cornerRadius = 15.0
+        img.clipsToBounds = true
     }
     
     override func viewWillAppear(animated: Bool) {
         titleLable.text = titleText
         descripLable.text = descText
+        img.image = image
     }
 
     override func didReceiveMemoryWarning() {

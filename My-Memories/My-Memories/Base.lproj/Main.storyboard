@@ -13,7 +13,6 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -60,7 +59,7 @@
                                     <constraint firstAttribute="height" constant="156" id="vSm-XO-gAV"/>
                                     <constraint firstAttribute="height" constant="156" id="vyL-ZR-2h2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" red="0.45701079842931935" green="0.45701079842931935" blue="0.45701079842931935" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -71,9 +70,10 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oy-jV-sGc">
-                                <rect key="frame" x="153" y="95" width="294" height="43"/>
+                                <rect key="frame" x="20" y="95" width="560" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="294" id="4SZ-4q-ys9"/>
+                                    <constraint firstAttribute="height" constant="43" id="9LB-28-416"/>
                                     <constraint firstAttribute="height" constant="43" id="JJ7-lg-fMQ"/>
                                     <constraint firstAttribute="height" constant="43" id="nsu-b4-M2Z"/>
                                 </constraints>
@@ -83,6 +83,7 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="4SZ-4q-ys9"/>
+                                        <exclude reference="JJ7-lg-fMQ"/>
                                         <exclude reference="nsu-b4-M2Z"/>
                                     </mask>
                                 </variation>
@@ -106,6 +107,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ou7-Rj-pFa" firstAttribute="top" secondItem="4oy-jV-sGc" secondAttribute="bottom" constant="20" id="0fN-of-aRf"/>
+                            <constraint firstItem="Ou7-Rj-pFa" firstAttribute="top" secondItem="4oy-jV-sGc" secondAttribute="bottom" constant="20" id="3aS-67-cx9"/>
                             <constraint firstItem="28G-l7-oNM" firstAttribute="top" secondItem="Ou7-Rj-pFa" secondAttribute="bottom" constant="36" id="4hq-GM-4FK"/>
                             <constraint firstItem="28G-l7-oNM" firstAttribute="centerX" secondItem="7x1-qz-Cg7" secondAttribute="centerX" id="9cJ-m3-NoW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4oy-jV-sGc" secondAttribute="trailing" constant="133" id="DvA-fh-wP3"/>
@@ -114,7 +116,9 @@
                             <constraint firstItem="4oy-jV-sGc" firstAttribute="leading" secondItem="7x1-qz-Cg7" secondAttribute="leadingMargin" constant="133" id="KAY-hI-zzI"/>
                             <constraint firstItem="Ou7-Rj-pFa" firstAttribute="top" secondItem="4oy-jV-sGc" secondAttribute="bottom" constant="21" id="Pde-vm-9TF"/>
                             <constraint firstItem="4oy-jV-sGc" firstAttribute="centerX" secondItem="7x1-qz-Cg7" secondAttribute="centerX" id="RgL-Xo-4jv"/>
+                            <constraint firstItem="4oy-jV-sGc" firstAttribute="leading" secondItem="7x1-qz-Cg7" secondAttribute="leadingMargin" id="VLj-TK-QWX"/>
                             <constraint firstItem="Ou7-Rj-pFa" firstAttribute="centerX" secondItem="7x1-qz-Cg7" secondAttribute="centerX" id="VZA-D9-0fc"/>
+                            <constraint firstItem="4oy-jV-sGc" firstAttribute="top" secondItem="Lth-am-uDu" secondAttribute="bottom" constant="8" id="Vwv-f4-fQH"/>
                             <constraint firstItem="4oy-jV-sGc" firstAttribute="top" secondItem="Lth-am-uDu" secondAttribute="bottom" constant="8" id="aR0-jT-nbs"/>
                             <constraint firstItem="Ou7-Rj-pFa" firstAttribute="centerX" secondItem="7x1-qz-Cg7" secondAttribute="centerX" id="bvg-1W-1eD"/>
                             <constraint firstItem="Lth-am-uDu" firstAttribute="top" secondItem="7x1-qz-Cg7" secondAttribute="top" id="c2g-dd-7Wq"/>
@@ -122,12 +126,18 @@
                             <constraint firstItem="28G-l7-oNM" firstAttribute="trailing" secondItem="7x1-qz-Cg7" secondAttribute="trailingMargin" id="o65-AX-34A"/>
                             <constraint firstItem="Lth-am-uDu" firstAttribute="leading" secondItem="7x1-qz-Cg7" secondAttribute="leading" id="pD0-Vj-YKl"/>
                             <constraint firstAttribute="trailing" secondItem="Lth-am-uDu" secondAttribute="trailing" id="rhD-iT-ehF"/>
+                            <constraint firstItem="4oy-jV-sGc" firstAttribute="trailing" secondItem="7x1-qz-Cg7" secondAttribute="trailingMargin" id="tGW-Bo-IF8"/>
                             <constraint firstItem="4oy-jV-sGc" firstAttribute="top" secondItem="Lth-am-uDu" secondAttribute="bottom" constant="8" id="xB0-az-tHt"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="DvA-fh-wP3"/>
+                                <exclude reference="JPN-cn-avi"/>
+                                <exclude reference="KAY-hI-zzI"/>
                                 <exclude reference="RgL-Xo-4jv"/>
+                                <exclude reference="aR0-jT-nbs"/>
                                 <exclude reference="xB0-az-tHt"/>
+                                <exclude reference="0fN-of-aRf"/>
                                 <exclude reference="Pde-vm-9TF"/>
                                 <exclude reference="bvg-1W-1eD"/>
                                 <exclude reference="4hq-GM-4FK"/>
@@ -184,7 +194,7 @@
                                                     <color key="textColor" red="0.66923674740000005" green="0.66923674740000005" blue="0.66923674740000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="FXE-mG-Yg2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="FXE-mG-Yg2">
                                                     <rect key="frame" x="111" y="30" width="441" height="62.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="62.5" id="zGR-gr-QE3"/>

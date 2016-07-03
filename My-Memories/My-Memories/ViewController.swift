@@ -50,22 +50,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 101.0
     }
-    
 
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //sending all the data in an array of strings as the sender so prepareForSeque and configure the data
         let title = DataService.shared.loadedPosts[indexPath.row].title
         let desc = DataService.shared.loadedPosts[indexPath.row].postDescrip
-        let array = [title, desc]
+        let imgPath = DataService.shared.loadedPosts[indexPath.row].imgPath
+        let array = [title, desc, imgPath]
         performSegueWithIdentifier("ShowDetail", sender: array)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //sending data from selected table cell to the DetailVC
         if segue.identifier == "ShowDetail" {
             if let svc = segue.destinationViewController as? DetailVC {
                 if let info = sender as? [String] {
                     svc.titleText = info[0]
                     svc.descText = info[1]
+                    svc.image = DataService.shared.imageForPath(info[2])
                 }
             }
         }
@@ -73,7 +75,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func onPostLoaded(notif: AnyObject) {
         tableView.reloadData()
-
     }
     
 }
