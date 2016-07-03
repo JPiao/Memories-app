@@ -30,15 +30,9 @@ class DetailVC: UIViewController {
         descripLable.text = descText
         img.image = image
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func backBtnPress(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-
 }

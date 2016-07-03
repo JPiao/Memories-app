@@ -53,7 +53,6 @@ class MakePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
         self.view.endEditing(true)
         
     }
