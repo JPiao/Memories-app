@@ -35,4 +35,15 @@ class DetailVC: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func imgBtnPress(sender: AnyObject) {
+        performSegueWithIdentifier("enlargeImg", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "enlargeImg" {
+            let svc = segue.destinationViewController as? EnlargedImageVC
+            svc?.passedImg  = image
+        }
+    }
+    
 }
