@@ -6,23 +6,34 @@
 //  Copyright © 2016 Jason Piao. All rights reserved.
 //
 
+//
+//  ViewController.swift
+//  My-Memories
+//
+//  Created by Jason Piao on 2016-06-30.
+//  Copyright © 2016 Jason Piao. All rights reserved.
+//
+
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.onPostLoaded(_:)), name: "postLoaded", object: nil)
         
         DataService.shared.loadPosts()
     }
-
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -44,13 +55,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.configureCell(post)
             return cell
         }
-    
+        
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 101.0
     }
-
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //sending all the data in an array of strings as the sender so prepareForSeque and configure the data
         let title = DataService.shared.loadedPosts[indexPath.row].title
@@ -75,6 +86,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func onPostLoaded(notif: AnyObject) {
         tableView.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            DataService.shared.deletePost(indexPath.row)
+            tableView.reloadData()
+        }
     }
     
 }

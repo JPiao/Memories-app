@@ -1,0 +1,27 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7B51EF921DFBB21135B2D527B6A0B708D425F7AF" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "81AEAEA9-B2A9-4D8A-AB96-AE3AAF2CACA2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7B51EF921DFBB21135B2D527B6A0B708D425F7AF" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "My-Memories",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "My-Memories.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/JPiao\/Memories-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7B51EF921DFBB21135B2D527B6A0B708D425F7AF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/JPiao\/Memories-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7B51EF921DFBB21135B2D527B6A0B708D425F7AF"
+    }
+  ]
+}
