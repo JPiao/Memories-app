@@ -13,15 +13,19 @@ class DataService {
     static let shared = DataService()
     
     let KEY_POST = "post"
-    var loadedPosts = [Post]()
+    private var _loadedPosts = [Post]()
+    
+    var loadedPosts: [Post] {
+        return _loadedPosts
+    }
     
     func deletePost(num: Int) {
-        loadedPosts.removeAtIndex(num)
+        _loadedPosts.removeAtIndex(num)
         savePosts()
     }
     
     func savePosts() {
-        let postData = NSKeyedArchiver.archivedDataWithRootObject(loadedPosts)
+        let postData = NSKeyedArchiver.archivedDataWithRootObject(_loadedPosts)
         NSUserDefaults.standardUserDefaults().setObject(postData, forKey: KEY_POST)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
@@ -30,7 +34,7 @@ class DataService {
         if let postData = NSUserDefaults.standardUserDefaults().objectForKey(KEY_POST) as? NSData {
             
             if let postsArray = NSKeyedUnarchiver.unarchiveObjectWithData(postData) as? [Post] {
-                loadedPosts = postsArray
+                _loadedPosts = postsArray
             }
         }
         
@@ -52,7 +56,7 @@ class DataService {
     }
     
     func addPost(post: Post) {
-        loadedPosts.append(post)
+        _loadedPosts.append(post)
         savePosts()
         loadPosts()
     }
